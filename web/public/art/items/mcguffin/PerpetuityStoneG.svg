@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 107.23 291.71">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #e7efe6;
+      }
+
+      .cls-2 {
+        fill: #487740;
+      }
+
+      .cls-3 {
+        fill: #a9e09d;
+      }
+
+      .cls-4 {
+        fill: #b4d6ae;
+      }
+
+      .cls-5 {
+        fill: #75d860;
+      }
+
+      .cls-6 {
+        fill: #519b42;
+      }
+    </style>
+  </defs>
+  <title>Asset 17</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <polygon class="cls-1" points="68.48 0 33.49 59.41 13.33 40.4 68.48 0"/>
+      <polygon class="cls-2" points="55.13 245.88 80.16 246.77 40.5 291.71 55.13 245.88"/>
+      <polygon class="cls-3" points="68.48 0 107.23 55.49 69.15 82.97 33.49 59.41 68.48 0"/>
+      <polygon class="cls-4" points="13.33 40.4 33.49 59.41 0 243.6 13.33 40.4"/>
+      <polygon class="cls-5" points="33.49 59.41 69.15 82.97 54.34 245.36 39.71 291.19 0 243.6 33.49 59.41"/>
+      <polygon class="cls-6" points="107.23 55.49 79.36 246.25 54.34 245.36 69.15 82.97 107.23 55.49"/>
+    </g>
+  </g>
+</svg>

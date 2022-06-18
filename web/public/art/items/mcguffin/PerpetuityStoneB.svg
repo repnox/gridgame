@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 151.27 371.97">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #2559a5;
+      }
+
+      .cls-2 {
+        fill: #849dd1;
+      }
+
+      .cls-3 {
+        fill: #1f1f56;
+      }
+
+      .cls-4 {
+        fill: #2663c6;
+      }
+
+      .cls-5 {
+        fill: #323e7a;
+      }
+
+      .cls-6 {
+        fill: #e6e8ef;
+      }
+    </style>
+  </defs>
+  <title>Asset 16</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <polygon class="cls-1" points="68.7 351.31 81.26 371.29 0 335.62 37.27 285.63 37.02 291.88 68.7 351.31"/>
+      <polygon class="cls-2" points="45.89 56.27 37.27 285.63 0 335.62 17.43 52.52 45.89 56.27"/>
+      <polygon class="cls-3" points="121.69 289.29 151.27 332.67 81.35 371.97 68.79 351.99 121.69 289.29"/>
+      <polygon class="cls-4" points="72.72 41.62 121.6 288.61 68.7 351.31 37.02 291.88 37.27 285.63 45.89 56.27 72.72 41.62"/>
+      <polygon class="cls-5" points="91.11 35.79 151.19 332 121.6 288.61 72.72 41.62 91.11 35.79"/>
+      <polygon class="cls-6" points="65.97 8.14 72.72 41.62 45.89 56.27 17.43 52.52 49.35 0 65.97 8.14"/>
+      <polygon class="cls-2" points="65.97 8.14 72.72 41.62 91.11 35.79 65.97 8.14"/>
+    </g>
+  </g>
+</svg>

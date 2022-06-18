@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 662.35 862.73">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        isolation: isolate;
+      }
+
+      .cls-3 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-4 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-5 {
+        clip-path: url(#clip-path-2);
+      }
+
+      .cls-6 {
+        opacity: 0.67;
+      }
+
+      .cls-7 {
+        clip-path: url(#clip-path-3);
+      }
+
+      .cls-8 {
+        fill: #eee;
+      }
+
+      .cls-9 {
+        fill: #070707;
+      }
+
+      .cls-10 {
+        fill: #0a0a0a;
+      }
+
+      .cls-11 {
+        fill: #020202;
+      }
+
+      .cls-12 {
+        fill: #111;
+      }
+
+      .cls-13 {
+        fill: #231f20;
+        opacity: 0.8;
+        mix-blend-mode: multiply;
+      }
+
+      .cls-14 {
+        fill: #161616;
+      }
+    </style>
+    <clipPath id="clip-path" transform="translate(24.8)">
+      <polygon class="cls-1" points="281.23 683.15 281.23 842.38 0 842.38 0 642.23 276.57 682.51 281.23 683.15"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="331.17" y1="603.14" x2="331.17" y2="861.59" gradientUnits="userSpaceOnUse">
+      <stop offset="0"/>
+      <stop offset="0.14" stop-opacity="0.47"/>
+      <stop offset="1" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clip-path-2" transform="translate(24.8)">
+      <polygon class="cls-1" points="433.3 603.13 433.3 842.38 281.23 842.38 281.23 683.15 433.3 603.13"/>
+    </clipPath>
+    <clipPath id="clip-path-3" transform="translate(24.8)">
+      <polygon class="cls-1" points="281.23 683.15 281.23 842.38 277.12 842.38 276.57 682.51 281.23 683.15"/>
+    </clipPath>
+  </defs>
+  <title>Asset 16</title>
+  <g class="cls-2">
+    <g id="Layer_2" data-name="Layer 2">
+      <g id="Layer_1-2" data-name="Layer 1">
+        <g class="cls-3">
+          <rect class="cls-4" y="599.72" width="662.35" height="263.01"/>
+        </g>
+        <g class="cls-5">
+          <rect class="cls-4" y="599.72" width="662.35" height="263.01"/>
+        </g>
+        <g class="cls-6">
+          <g class="cls-7">
+            <rect class="cls-4" y="599.72" width="662.35" height="263.01"/>
+          </g>
+        </g>
+        <polygon class="cls-8" points="458.09 604.51 176.86 565.6 176.86 0 458.09 38.91 458.09 604.51"/>
+        <polygon class="cls-9" points="306.04 683.34 24.8 644.42 24.8 78.83 306.04 117.74 306.04 683.34"/>
+        <polygon class="cls-10" points="24.8 78.83 176.86 0 458.09 38.91 306.04 117.74 24.8 78.83"/>
+        <polygon class="cls-11" points="306.04 683.34 458.09 604.51 458.09 38.91 306.04 117.74 306.04 683.34"/>
+        <polygon class="cls-12" points="303.25 117.36 303.25 117.36 24.8 78.83 24.8 81.94 303.24 121.36 301.38 682.71 306.04 683.34 306.04 121.75 306.04 117.74 303.25 117.36"/>
+        <polygon class="cls-13" points="306.04 683.34 24.8 644.42 24.8 645.95 306.04 686.31 458.09 607.47 458.09 604.51 306.04 683.34"/>
+        <polygon class="cls-14" points="306.04 117.74 458.09 38.91 458.09 42.99 306.04 121.75 306.04 117.74"/>
+      </g>
+    </g>
+  </g>
+</svg>
