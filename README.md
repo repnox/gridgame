@@ -1,6 +1,6 @@
 # Grid Game
 
-![Screenshot of Grid Game](./readme/gridgame-screenshot.PNG)
+![Screenshot of Grid Game](./readme/grid-game-with-items.PNG)
 
 ## About
 
@@ -37,6 +37,26 @@ And, if your versions get messed up, it's a real PITA to fix.
     (I'd like to find a better home for this variable)
 11. Navigate to http://localhost:8080/#/ and create a Player. Now you can travel to different grid squares and reveal them, mint lootboxes and quest items, etc.
 
+## Current features
+
+### Players
+Any wallet may mint a Player NFT.
+Players may play the game if they are staked.
+While staked, a Player may not transfer to another wallet.
+Players have Stats which determine their abilities in the game.
+
+### Traveling
+Players can travel to different squares on the grid.
+A Player's Travel stat determines how many squares they may travel at once (the way this is calculated currently is a bit sus).
+If a Player travels to a grid square which has not yet been revealed, a hash will be generated for that square.
+
+### Generating NFTs
+The grid hash determines what actions are available on the square.
+Actions include:
+1. Generating a lootbox (which isn't currently redeemable)
+2. Generating a quest item
+3. Exchanging a quest item for a special lootbox (which isn't currently redeemable)
+
 ## Extending the game
 
 The game can be extended by creating additional contracts and registering their access in the ApplicationRegistry.
@@ -60,6 +80,11 @@ If every player action changes the state of its stream, then it could take sever
 So, you're probably better off just doing the action repeatedly until you get what you want.
 And a well-designed bot would still have an advantage over other players - which is good!
 In theory...
+
+In some cases, RNG exploitation is completely impossible.
+Take lootboxes for example. They are not currently redeemable, but they will be in the future.
+So, nobody knows which lootbox hash will be most valuable.
+In fact, even the developers may not know.
 
 ## Credits
 
