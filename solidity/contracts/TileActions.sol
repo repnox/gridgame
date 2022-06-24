@@ -2,6 +2,7 @@
 pragma solidity ^0.8.0;
 
 import "./extension/FragileRegistrationAware.sol";
+import "./interface/PlayerStakingInterface.sol";
 import "./MovementController.sol";
 import "./Item.sol";
 import "./opensea/common/meta-transactions/ContentMixin.sol";
@@ -23,7 +24,7 @@ contract TileActions is FragileRegistrationAware, ContextMixin {
     event McguffinMinted(address owner, uint256 playerId, uint256 mcguffinType, uint256 itemId);
     event FetchQuestComplete(address owner, uint256 playerId, uint256 itemId, uint256 rewardType, uint256 rewardId);
 
-    constructor(ApplicationRegistry _applicationRegistry) RegistrationAware(_applicationRegistry) {}
+    constructor(address _applicationRegistry) RegistrationAware(_applicationRegistry) {}
 
     function mintLootbox(uint256 playerId) external {
         _requireAuthorized(playerId);
@@ -98,11 +99,15 @@ contract TileActions is FragileRegistrationAware, ContextMixin {
     }
 
     function _requireInPlay(uint256 id) internal view {
-        require(_applicationRegistry().player().isStaked(id), "Not staked");
+        require(_playerStaking().isStaked(id), "Not staked");
     }
 
     function _requirePlayerOwned(uint256 playerId, uint256 itemId) internal view {
         require(_applicationRegistry().item().getPlayerOwner(itemId) == playerId, "Not player owned");
+    }
+
+    function _playerStaking() internal view returns (PlayerStakingInterface) {
+        return PlayerStakingInterface(_applicationRegistry().playerStaking());
     }
 
 }

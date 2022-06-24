@@ -9,7 +9,7 @@ import "./interface/GetPlayerInterface.sol";
 
 contract Item is ERC721PlayerOwnable {
 
-    constructor(ApplicationRegistry _applicationRegistry) ERC721Registered(_applicationRegistry, "Grid Game Item", "GGI") {
+    constructor(address _applicationRegistry) ERC721Registered(_applicationRegistry, "Grid Game Item", "GGI") {
     }
 
     function getItemType(uint256 id) external pure returns (uint256) {

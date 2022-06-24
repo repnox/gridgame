@@ -25,7 +25,7 @@ contract Grid is IsInBoundsInterface, RegistrationAware {
     int128 public maxX;
     int128 public maxY;
 
-    constructor(IsAccessRegisteredInterface _applicationRegistry,
+    constructor(address _applicationRegistry,
                 int128 _minX, int128 _minY, int128 _maxX, int128 _maxY
             ) RegistrationAware(_applicationRegistry) {
         minX = _minX;

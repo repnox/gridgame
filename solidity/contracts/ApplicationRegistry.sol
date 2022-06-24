@@ -8,6 +8,8 @@ import "./interface/GetCommonLibInterface.sol";
 import "./interface/GetGridInterface.sol";
 import "./interface/GetPlayerInterface.sol";
 import "./interface/GetRandomGeneratorInterface.sol";
+import "./interface/GetPlayerStakingInterface.sol";
+import "./interface/GetPlayerEventCallbacksInterface.sol";
 import "./MovementController.sol";
 import "./Grid.sol";
 import "./Player.sol";
@@ -22,6 +24,8 @@ contract ApplicationRegistry is
         GetGridInterface,
         GetPlayerInterface,
         GetScopedRandomGeneratorInterface,
+        GetPlayerEventCallbacksInterface,
+        GetPlayerStakingInterface,
         Ownable
 {
 
@@ -41,6 +45,8 @@ contract ApplicationRegistry is
     address public gameView;
     address public playerActions;
     address public tileActions;
+    address public playerEventCallbacks;
+    address public playerStaking;
 
     constructor() {
         _registerAccess(msg.sender);
@@ -60,6 +66,14 @@ contract ApplicationRegistry is
 
     function getScopedRandomGenerator() external override view returns (address) {
         return address(scopedRandomGenerator);
+    }
+
+    function getPlayerEventCallbacks() external override view returns (address) {
+        return playerEventCallbacks;
+    }
+
+    function getPlayerStaking() external override view returns (address) {
+        return playerStaking;
     }
 
     function isAccessRegistered(address app) external override view returns (bool) {
@@ -126,6 +140,15 @@ contract ApplicationRegistry is
     function registerTileActions(address app) external onlyOwner {
         tileActions = app;
         _registerAccess(app);
+    }
+
+    function registerPlayerEventCallbacks(address app) external onlyOwner {
+        playerEventCallbacks = app;
+        _registerAccess(app);
+    }
+
+    function registerPlayerStaking(address app) external onlyOwner {
+        playerStaking = app;
     }
 
     function registerAccess(address app) external onlyOwner {

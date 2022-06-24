@@ -15,7 +15,7 @@ contract ScopedRandomGenerator is GenerateScopedRandomNumberInterface, Registrat
 
     mapping(uint256 => uint256) internal scopeState;
 
-    constructor(IsAccessRegisteredInterface _applicationRegistry) RegistrationAware(_applicationRegistry) {}
+    constructor(address _applicationRegistry) RegistrationAware(_applicationRegistry) {}
 
     function peek(uint256 scope) external view returns (uint256) {
         return _getCurrentState(scope);

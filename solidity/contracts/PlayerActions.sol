@@ -2,6 +2,7 @@
 pragma solidity ^0.8.0;
 
 import "./extension/FragileRegistrationAware.sol";
+import "./interface/PlayerStakingInterface.sol";
 import "./Stats.sol";
 import "./Grid.sol";
 import "./MovementController.sol";
@@ -16,7 +17,7 @@ contract PlayerActions is FragileRegistrationAware, ContextMixin {
     event PlayerUnstaked(uint256 id);
     event PlayerStaked(uint256 id);
 
-    constructor(ApplicationRegistry _applicationRegistry) RegistrationAware(_applicationRegistry) {}
+    constructor(address _applicationRegistry) RegistrationAware(_applicationRegistry) {}
 
     function createPlayer() external returns (uint256) {
         address mintTo = msg.sender;
@@ -29,7 +30,7 @@ contract PlayerActions is FragileRegistrationAware, ContextMixin {
     function unstakePlayer(uint256 id) external {
         _requireAuthorized(id);
         _requireInPlay(id);
-        _applicationRegistry().player().unstake(id);
+        _playerStaking().unstake(id);
         _applicationRegistry().movementController().disableMovement(id);
         emit PlayerUnstaked(id);
     }
@@ -37,7 +38,7 @@ contract PlayerActions is FragileRegistrationAware, ContextMixin {
     function stakePlayer(uint256 id) external {
         _requireAuthorized(id);
         _requireNotInPlay(id);
-        _applicationRegistry().player().stake(id);
+        _playerStaking().stake(id);
         _applicationRegistry().movementController().initializeMovement(id);
         emit PlayerStaked(id);
     }
@@ -67,17 +68,21 @@ contract PlayerActions is FragileRegistrationAware, ContextMixin {
     }
 
     function _requireInPlay(uint256 id) internal view {
-        require(_applicationRegistry().player().isStaked(id), "Not staked");
+        require(_playerStaking().isStaked(id), "Not staked");
     }
 
     function _requireNotInPlay(uint256 id) internal view {
-        require(!_applicationRegistry().player().isStaked(id), "Staked");
+        require(!_playerStaking().isStaked(id), "Staked");
     }
 
     function _initializePlayer(uint256 id) internal {
         _applicationRegistry().movementController().initializeMovement(id);
         Stats stats = _applicationRegistry().stats();
         stats.setStat(id, stats.STAT_TRAVEL(), initialTravelStat);
+    }
+
+    function _playerStaking() internal view returns (PlayerStakingInterface) {
+        return PlayerStakingInterface(_applicationRegistry().playerStaking());
     }
 
 }

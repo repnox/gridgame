@@ -40,6 +40,10 @@ addFile('./artifacts/contracts/Grid.sol/Grid.json', {
         {name:'maxY', value:'10'}
     ]
 });
+addFile('./artifacts/contracts/PlayerEventCallbacks.sol/PlayerEventCallbacks.json', {
+    registration: 'registerPlayerEventCallbacks',
+    args: [{name: 'ApplicationRegistry'}]
+});
 addFile('./artifacts/contracts/Player.sol/Player.json', {
     registration: 'registerPlayer',
     args: [{name: 'ApplicationRegistry'}]

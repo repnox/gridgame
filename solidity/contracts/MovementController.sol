@@ -27,7 +27,7 @@ contract MovementController is RegistrationAware {
     mapping(uint256 => uint256) reverseLookupCount;
     mapping(uint256 => mapping(uint256 => uint256)) reverseLookup;
 
-    constructor(ApplicationRegistry _applicationRegistry) RegistrationAware(_applicationRegistry) {}
+    constructor(address _applicationRegistry) RegistrationAware(_applicationRegistry) {}
 
     function getTokensAtCoords(int128 x, int128 y) external view returns (uint256[] memory) {
         uint256 encodedCoords = _encodeCoordinates(x,y);

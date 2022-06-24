@@ -11,7 +11,7 @@ contract Stats is RegistrationAware {
 
     mapping(uint256 => mapping(uint256 => uint256)) tokenStatValues;
 
-    constructor(ApplicationRegistry _applicationRegistry) RegistrationAware(_applicationRegistry) {}
+    constructor(address _applicationRegistry) RegistrationAware(_applicationRegistry) {}
 
     function setStat(uint256 token, uint256 stat, uint256 value) external onlyRegistered {
         tokenStatValues[token][stat] = value;

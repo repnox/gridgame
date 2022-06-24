@@ -11,8 +11,8 @@ abstract contract RegistrationAware is Ownable {
 
     address internal applicationRegistry;
 
-    constructor(IsAccessRegisteredInterface _applicationRegistry) {
-        applicationRegistry = address(_applicationRegistry);
+    constructor(address _applicationRegistry) {
+        applicationRegistry = _applicationRegistry;
     }
 
     function setApplicationRegistry(address _applicationRegistry) external onlyOwner {

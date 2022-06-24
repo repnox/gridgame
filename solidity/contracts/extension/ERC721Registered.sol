@@ -10,13 +10,12 @@ import "../opensea/common/meta-transactions/ContentMixin.sol";
 import "../opensea/common/meta-transactions/NativeMetaTransaction.sol";
 import "./RegistrationAware.sol";
 import "./ERC721EnumerableExtended.sol";
-import "../ApplicationRegistry.sol";
 
 abstract contract ERC721Registered is ContextMixin, ERC721EnumerableExtended, NativeMetaTransaction, RegistrationAware {
     using SafeMath for uint256;
 
     constructor(
-        ApplicationRegistry _applicationRegistry,
+        address _applicationRegistry,
         string memory _name,
         string memory _symbol
     ) RegistrationAware(_applicationRegistry) ERC721(_name, _symbol) {
