@@ -55,6 +55,7 @@
 import web3common from "../../service/web3common";
 import {ContractFactory} from "ethers";
 import nodezip from "node-zip";
+import {readFileAsBinaryString, readJsonFromZip} from "@/service/utils";
 
 export default {
   name: "DeploySmartContract.vue",
@@ -112,22 +113,10 @@ export default {
         }
       }
     },
-    readFile(file) {
-      return new Promise((resolve, reject) => {
-        const fileReader = new FileReader();
-        fileReader.onload = (res) => {
-          resolve(res.target.result);
-        };
-        fileReader.onerror = (err) => {
-          reject(JSON.stringify(err));
-        };
-        fileReader.readAsBinaryString(file)
-      });
-    },
     readZipFile() {
-      this.readFile(this.deploymentZip).then((result) => {
+      readFileAsBinaryString(this.deploymentZip).then((result) => {
         const zip = nodezip(result);
-        const content = this.readJsonFromZip(zip, '_deploymentManifest');
+        const content = readJsonFromZip(zip, '_deploymentManifest');
         for (let step of content) {
           step.successMessage = "";
           step.errorMessage = "";
@@ -135,11 +124,6 @@ export default {
         this.deploymentManifest = content;
       });
 
-    },
-    readJsonFromZip(zip, filename) {
-      const data = zip.files[filename];
-      const json = JSON.parse(new TextDecoder().decode(data._data.getContent()));
-      return json;
     }
   }
 }

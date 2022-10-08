@@ -15,12 +15,14 @@ import {
   faSpinner,
   faPlus,
   faCheckCircle,
+  faChevronDown,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(faExclamationTriangle);
 library.add(faSpinner);
 library.add(faPlus);
 library.add(faCheckCircle);
+library.add(faChevronDown);
 
 Vue.use(BootstrapVue);
 Vue.component('font-awesome-icon', FontAwesomeIcon);

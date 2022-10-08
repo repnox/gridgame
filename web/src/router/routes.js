@@ -2,6 +2,7 @@ import Home from "../views/Home";
 import DeploySmartContract from "../views/admin/DeploySmartContract";
 import InspectApplicationRegistry from "../views/admin/InspectApplicationRegistry";
 import MintNFT from "../views/admin/MintNFT";
+import GameDesigner from "../views/admin/GameDesigner";
 import Error404 from "../views/Error404";
 
 export default [
@@ -26,6 +27,11 @@ export default [
         path: '/admin/mint-nft',
         name: 'Mint NFT',
         component: MintNFT
+    },
+    {
+        path: '/admin/game-designer',
+        name: 'Game Designer',
+        component: GameDesigner
     },
     // -------------------------------------
     // Error:
